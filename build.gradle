@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.5.4'
     id 'io.spring.dependency-management' version '1.1.7'
+    id 'org.jetbrains.kotlin.jvm'
 }
 
 group = 'com.sandro'
@@ -29,6 +30,14 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+
+    // Kotest Runner (JUnit 5 연동)
+    testImplementation("io.kotest:kotest-runner-junit5:5.9.1")
+    // Kotest Assertions (shouldBe 등 검증 구문)
+    testImplementation("io.kotest:kotest-assertions-core:5.9.1")
+    // Spring Boot Test에서 Kotest를 원활하게 사용하기 위한 라이브러리 (선택사항이지만 권장)
+    testImplementation("io.kotest.extensions:kotest-extensions-spring:1.1.3")
 }
 
 tasks.named('test') {
