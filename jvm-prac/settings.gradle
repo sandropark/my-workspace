@@ -6,7 +6,7 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'my-workspace'
+rootProject.name = 'jvm-prac'
 
 include 'kotlin-prac'
 
